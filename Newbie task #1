@@ -1,0 +1,25 @@
+<?php
+
+error_reporting(-1);
+
+$creditBalance = 40000; /* долг анона*/
+$percent = 1.03; /* проценты от банка */
+$servicePayment = 1000; /* комиссия */
+$monthlyPayment = 5000; /* месячный платеж */
+$paymentTotal = 0; /* сколько всего отдал банку анон */
+
+for ($month = 1; $creditBalance > 0 ; $month ++) {
+    
+    $creditBalance = ( $creditBalance * $percent ) + $servicePayment;  /* считаем долг анона */
+	
+	if ($creditBalance < 5000) {
+        $monthlyPayment = $creditBalance;  
+        
+	} 
+    
+    $paymentTotal = $paymentTotal + $monthlyPayment;
+    $creditBalance = $creditBalance - $monthlyPayment;
+    
+}  
+
+echo "$month месяцев спустя школяр вылатил $paymentTotal руб";
