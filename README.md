@@ -1,2 +1,2 @@
 # hello-world
-newbie tasks
+Это я пытаюсь в быдлокодинг
